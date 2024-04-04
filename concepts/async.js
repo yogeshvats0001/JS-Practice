@@ -3,7 +3,7 @@
 
 // Problem Statement ::
 // 1. We have an object of details containing 2 data.
-// 2.
+// 2. Here addData function took more time to execute like 2000ms where as getData took only 1000ms due to which our program is not working fine due to timings issue.
 
 const students = [
   { name: "Yogesh", age: 25 },
