@@ -62,3 +62,9 @@ let bind_user3 = user3.printDetails.bind(user4, "uttarpradesh", "india");
 bind_user3();
 let bind_user = user3.printDetails.bind(user5, ["uttarpradesh", "india"]); //almost same behaviour as call
 bind_user();
+
+
+///USE-CASES:
+//1. Changing Context: 'call' and 'apply' are commonly used when you want to invoke a function with a specified context(value of 'this'), especially when working with object methods.
+//2. Partial Applications: 'bind' is often used to create a new function with pre-specified arguments, which is useful for creating partially applied functions.
+//3. Function Borrowing: 'call' and 'apply' can be used to borrow the functions from one object and apply them to another object.
