@@ -43,14 +43,14 @@ console.log(sum);
 const max = arr2.reduce((acc, value) => Math.max(acc, value), -Infinity);
 console.log('Max Value : ', max);
 
-//Question : Count the number of person with particular age.
+//Question : 
 const users = [
     {firstName : "Yogesh" , lastName : "Vats", age : 26},
     {firstName : "Yogi" , lastName : "Sharma", age : 9},
     {firstName : "Toshal" , lastName : "Lubana", age : 28},
     {firstName : "Ankit" , lastName : "Arora", age : 26}
 ];
-//Task1: {26 : 2, 28 : 1, 90 : 1}
+//Task1: Count the number of person with particular age. : {26 : 2, 28 : 1, 90 : 1}
 const result = users.reduce((acc, val)=>{
     console.log(val);
     let currentAge = val.age;
