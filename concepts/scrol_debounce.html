@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Debouncing Scroll Event</title>
+<style>
+  body {
+    height: 2000px; /* Make the body tall to enable scrolling */
+  }
+  #content {
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    height: 1000px; /* Sample content height */
+  }
+</style>
+</head>
+<body>
+
+<div id="content">
+  <!-- Content to be loaded or affected by scroll -->
+</div>
+
+<script>
+function debounce(func, delay) {
+  let timeoutId;
+  
+  return function() {
+    const context = this;
+    const args = arguments;
+    
+    clearTimeout(timeoutId);
+    
+    timeoutId = setTimeout(() => {
+      func.apply(context, args);
+    }, delay);
+  };
+}
+
+function handleScroll() {
+  console.log("Scrolled");
+  // Your scroll-related functionality here
+}
+
+const debouncedHandleScroll = debounce(handleScroll, 300); // debounce with a delay of 300 milliseconds
+
+window.addEventListener('scroll', debouncedHandleScroll);
+
+</script>
+</body>
+</html>
