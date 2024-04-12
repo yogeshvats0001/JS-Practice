@@ -68,3 +68,17 @@ bind_user();
 //1. Changing Context: 'call' and 'apply' are commonly used when you want to invoke a function with a specified context(value of 'this'), especially when working with object methods.
 //2. Partial Applications: 'bind' is often used to create a new function with pre-specified arguments, which is useful for creating partially applied functions.
 //3. Function Borrowing: 'call' and 'apply' can be used to borrow the functions from one object and apply them to another object.
+
+
+//With Functions
+function func1(name, age){
+    this.name = name;
+    this.age = age;
+};
+
+function func2(name, age){
+    func1.call(this, name, age);
+    this.city = 'ambala';
+};
+
+console.log(new func2('abx', 90).name);
