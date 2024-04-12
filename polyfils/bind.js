@@ -18,11 +18,14 @@ Function.prototype.myBind = function(context, ...args){
         throw new Error(this, 'invalid call');
     }
 
+    console.log(this);
     context.myfunc = this;
+
+    //return an anonymous function
     return function(...newArgs){
         context.myfunc(...args, ...newArgs);
     }
-}
+};
 
 const result = obj1.print.myBind(obj2, 'amb');
 result('ind');
