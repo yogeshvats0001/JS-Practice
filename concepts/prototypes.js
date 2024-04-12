@@ -1,5 +1,7 @@
 ///PROTOTYPE in JS : Just inheritance in JS.
 
+///WHAT? : Every object has a property named as 'prototype' which is a reference to another object. This 'prototype' object is used as fallback source of properties and methods when they are not directly found in the object itself.
+
 const obj1 = {
     name: 'obj1-name',
     getName: function(){
@@ -31,7 +33,7 @@ console.log(obj1.age); // age is not present in the scope of obj1
 
 console.log(obj2.getName());
 console.log(obj2.getAge());
-console.log(obj1.getAge());
+console.log(obj1.getAge()); //undefined
 
 console.log(obj3.getCity());
 
