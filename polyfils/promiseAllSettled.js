@@ -35,7 +35,7 @@ Promise.myAllSettled = function (promises) {
         .catch((error) => {
           result.push({
             status: "rejected",
-            value: error,
+            reason: error,
           });
           count--;
 
@@ -48,5 +48,5 @@ Promise.myAllSettled = function (promises) {
 };
 
 Promise.myAllSettled(promises)
-  .then((res) => console.log(res))
-  .catch((error) => console.error(error)); //promises
+  .then((res) => console.log(res, 'then'))
+  .catch((error) => console.error(error, 'catch')); //promises
