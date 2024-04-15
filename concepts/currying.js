@@ -47,11 +47,11 @@ console.log(details('name'));
 console.log(details('age'));
 
 //USE_CASES: More advanced implementations of currying, such as _.curry from lodash library, return a wrapper that allows a function to be called both normally and partially:
-function sumAB(a, b) {
-  return a + b;
-}
-let curriedSum = _.curry(sumAB); // using _.curry from lodash library
-alert( curriedSum(1, 2) ); // 3, still callable normally
-alert( curriedSum(1)(2) ); // 3, called partially
+// function sumAB(a, b) {
+//   return a + b;
+// }
+// let curriedSum = _.curry(sumAB); // using _.curry from lodash library
+// alert( curriedSum(1, 2) ); // 3, still callable normally
+// alert( curriedSum(1)(2) ); // 3, called partially
 
 //EDGE_CASES: If we use forth argument sum(1)(2)(3)(4) in above, then we will get TypeError: sum1()()() is not a function. AND in case of less argument like sum1(1)(3) then it will return the definition of the sum1()().
