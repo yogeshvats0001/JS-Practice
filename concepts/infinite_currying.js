@@ -1,4 +1,4 @@
-// Problem Statement: Implement a function which will work smoothly with infinite currying calls.
+// Problem Statement: Implement a function which will work smoothly with infinite currying calls. [There must be only one () empty paranthesis in the given call]
 
 // function sum(a){
 //     return function(b){
