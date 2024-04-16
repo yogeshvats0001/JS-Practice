@@ -16,4 +16,4 @@ function myAdd(a){
     }
 }
 
-console.log(myAdd(1)(2)(3)(4)(5)(6)(7)());
+console.log(myAdd(1)(2)(3)(4)(5)(6)(7)()); 

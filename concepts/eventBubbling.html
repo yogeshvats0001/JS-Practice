@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Bubbling</title>
+    <style>
+      #mainDiv {
+        border: 2px dotted black;
+      }
+      #innerDiv1{
+        border: 2px solid red;
+      }
+      #innerDiv2{
+        border: 2px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mainDiv">
+      <div id="innerDiv1">
+        <button id="btn">Click Me</button>
+      </div>
+      <div id="innerDiv2">
+        <input type="text" id="in"/>
+      </div>
+    </div>
+    <script src="./eventBubbling.js"></script>
+  </body>
+</html>
