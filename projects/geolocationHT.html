@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation</title>
+</head>
+<body>
+    <button id="btn">Get Location</button>
+
+    <script>
+        const btn = document.getElementById('btn');
+
+        btn.addEventListener('click', ()=>{
+            navigator.geolocation.getCurrentPosition(pos => {
+                console.log('latitude: ', pos.coords.latitude);
+                console.log('longitude: ', pos.coords.longitude);
+
+                alert('latitude: ', pos.coords.latitude);
+                alert('longitude: ', pos.coords.longitude);
+            })
+        })
+    </script>
+</body>
+</html>
