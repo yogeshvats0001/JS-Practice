@@ -7,11 +7,13 @@
 // 2. Reduce Re-calculations
 // 3. Simplifies the code.
 
+
+///EX1. Fibonacci
 function memoize(func){
     let cache = {};
     return function(...args){
         // const key = JSON.stringify(args);
-        const key = args;
+        const key = args[0];
         if(!cache[key]){
             console.log('inside if', cache);
             cache[key] = func.apply(this, args);
@@ -31,3 +33,50 @@ const memoizationFibo = memoize(fibonacciSeries);
 console.log(memoizationFibo(5));
 console.log(memoizationFibo(10));
 console.log(memoizationFibo(10)); //returned the result from the cache
+
+
+
+///EX2. 
+//Traditional Way
+function factorial(num){
+    if(num <= 1) return 1;
+    return num * factorial(num - 1);
+}
+// console.time();
+// console.log(factorial(5));
+// console.log(factorial(5));
+// console.timeEnd();
+
+//Memoization Way
+function memoizer(func){
+    let cache = {};
+    return function(...args){
+        let key = args[0];
+        if(!cache[key]){
+            console.log('inside if ', cache);
+            cache[key] = func.apply(this, args);
+        }
+        console.log(cache);
+        return cache[key];
+    }
+};
+
+const myFactorial = memoizer(factorial);
+
+console.time();
+console.log(myFactorial(5));
+console.timeEnd();
+console.time();
+console.log(myFactorial(5));
+console.timeEnd();
+
+//Output:
+// inside if  {}
+// { '5': 120 }
+// 120
+// default: 3.754ms
+// { '5': 120 }
+// 120
+// default: 0.228ms
+
+//Time difference in the call to myFactorial for same inputs is huge and this will improves the page optimization.
