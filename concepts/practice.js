@@ -8,7 +8,7 @@ const userBase = [
 ];
 
 //Task1: Check if name exists, eg: yogesh
-const checkName = 'yogesjh';
+const checkName = 'yogesh';
 const task1_1 = userBase.forEach(user => {
     console.log('inside foreach: ', user);
     if(user.name === checkName){
@@ -33,10 +33,16 @@ const task1_3 = (arr, nameToCheck) => {
 }
 console.log('task1_3 : ' , task1_3(userBase, checkName));
 
+const task1_4 = (arr, nameToCheck) => {
+    const result = arr.findIndex(val => val.name === nameToCheck);
+    return (result);
+}
+console.log('task1_4 : ' , task1_4(userBase, checkName));
 
-const task1_4 = userBase.filter(val => {
+
+const task1_5 = userBase.filter(val => {
     if(val.name === checkName){
         return true;
     }
 });
-console.log(task1_4.length !== 0 ? task1_4 : 'Not found');
+console.log(task1_5.length !== 0 ? task1_5 : 'Not found');
