@@ -90,7 +90,7 @@ console.log(sum);
 const max = arr2.reduce((acc, value) => Math.max(acc, value), -Infinity);
 console.log("Max Value : ", max);
 
-//Question :
+///Practice Question1:
 const users = [
   { firstName: "Yogesh", lastName: "Vats", age: 26 },
   { firstName: "Yogi", lastName: "Sharma", age: 9 },
@@ -121,3 +121,45 @@ console.log(resultName);
 //Task3: list of fullNames.
 const fullName = users.map((value) => value.firstName + " " + value.lastName);
 console.log("Full Name from users : ", fullName);
+
+///Practice Question2:
+const userBase = [
+  {id: 1, name: 'yogesh', isActive: true, age: 25},
+  {id: 2, name: 'lubana', isActive: false, age: 27},
+  {id: 3, name: 'bathla', isActive: true, age: 26},
+  {id: 4, name: 'vinayak', isActive: false, age: 28},
+];
+//1. Write code to get the arr of names;
+//Way1: for loop 
+const userBaseNameForLoop = [];
+for(let i = 0; i < userBase.length; i++){
+  userBaseNameForLoop.push(userBase[i].name);
+}
+console.log('Task1: array of names by for loop method: ', userBaseNameForLoop);
+
+//Way2: forEach 
+const userBaseNameForEachLoop = [];
+userBase.forEach(val => {
+  userBaseNameForEachLoop.push(val.name);
+});
+console.log('Task1: array of names by forEach method: ', userBaseNameForEachLoop);
+
+//Way3: map method of array.
+const userBaseNameMap = userBase.map(val => val.name);
+console.log('Task1: array of names by map method: ', userBaseNameMap);
+
+
+//2. get back only active users; 
+//Way1: get active user and display name: filter-map chaining
+console.log('Task2: names of active user: ', userBase.filter(val => val.isActive).map(val => val.name));
+
+//Way2: filter
+const userBaseActiveOnly = userBase.filter(val => val.isActive);
+console.log('Task2: array of active users: ', userBaseActiveOnly);
+
+//3. sort users by desc age
+const userBaseSortAcs = userBase.sort((val1, val2) => val1.age - val2.age);
+console.log('userBaseSortAcs: ', userBaseSortAcs);
+
+const userBaseSortDsc = userBase.sort((val1, val2) => val2.age - val1.age);
+console.log('userBaseSortDsc: ' , userBaseSortDsc);
